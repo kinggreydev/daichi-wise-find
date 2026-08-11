@@ -32,35 +32,38 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
           </span>
         </Link>
 
-        <div className="ml-2 hidden min-w-0 flex-1 sm:block">
-          <div className="flex h-9 max-w-64 items-center gap-2 rounded-lg border border-line bg-panel px-3 text-mute">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="6.5" />
-              <path d="M16 16l4 4" />
-            </svg>
-            <span className="flex-1 text-[13px]">Search</span>
-            <kbd className="rounded border border-line px-1.5 py-0.5 font-sans text-[10px] text-mute">
-              K
-            </kbd>
+        {!isDocs && (
+          <div className="ml-2 hidden min-w-0 flex-1 sm:block">
+            <div className="flex h-9 max-w-64 items-center gap-2 rounded-lg border border-line bg-panel px-3 text-mute">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="6.5" />
+                <path d="M16 16l4 4" />
+              </svg>
+              <span className="flex-1 text-[13px]">Search</span>
+              <kbd className="rounded border border-line px-1.5 py-0.5 font-sans text-[10px] text-mute">
+                K
+              </kbd>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="ml-auto flex items-center gap-5">
           <Link
-            to="/learn-more"
+            to={isDocs ? "/" : "/learn-more"}
             className="nav-link hidden text-[13px] text-mute transition-colors hover:text-ink sm:inline"
           >
-            Learn more
+            {isDocs ? "Home" : "Learn more"}
           </Link>
+
           <a
             href="https://github.com"
             className="nav-link hidden text-[13px] text-mute transition-colors hover:text-ink sm:inline"
