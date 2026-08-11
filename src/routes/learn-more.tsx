@@ -130,8 +130,8 @@ function LearnMore() {
                     : "border-b border-[color:var(--line)]"
                 }`}
               >
-                <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.15fr]">
-                  <div className={reversed ? "lg:order-2" : "lg:order-1"}>
+                <div className="grid items-center gap-14 min-[820px]:grid-cols-[1fr_1.15fr]">
+                  <div className={reversed ? "min-[820px]:order-2" : "min-[820px]:order-1"}>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-lime-brand">
                       {s.eyebrow}
                     </p>
@@ -152,7 +152,7 @@ function LearnMore() {
                       ))}
                     </ul>
                   </div>
-                  <div className={reversed ? "lg:order-1" : "lg:order-2"}>
+                  <div className={reversed ? "min-[820px]:order-1" : "min-[820px]:order-2"}>
                     <PhoneMockup
                       src={s.image}
                       alt={s.alt}
