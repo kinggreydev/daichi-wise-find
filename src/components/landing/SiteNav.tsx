@@ -2,8 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { LeafMark } from "./icons";
 
-export function SiteNav() {
+export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" }) {
+  const isDocs = variant === "docs";
   const [scrolled, setScrolled] = useState(false);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
