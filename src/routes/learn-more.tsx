@@ -120,7 +120,7 @@ function LearnMore() {
               id={s.id}
               className="scroll-mt-20 border-t border-[color:var(--line-soft)] py-16"
             >
-              <div className="grid items-start gap-12 md:grid-cols-[1fr_auto]">
+              <div className="grid items-center gap-12 md:grid-cols-2">
                 <div className={reversed ? "md:order-2" : "md:order-1"}>
                   <div className="flex items-baseline gap-4">
                     <span className="label-mono text-lime-brand">{s.label}</span>
@@ -144,13 +144,8 @@ function LearnMore() {
                     ))}
                   </dl>
                 </div>
-                <div className={reversed ? "md:order-1" : "md:order-2"}>
-                  <ScreenFrame
-                    src={s.image}
-                    alt={s.alt}
-                    label={s.eyebrow}
-                    width={236}
-                  />
+                <div className={`flex justify-center ${reversed ? "md:order-1 md:justify-start" : "md:order-2 md:justify-end"}`}>
+                  <ScreenFrame src={s.image} alt={s.alt} width={252} />
                 </div>
               </div>
             </section>

@@ -1,7 +1,7 @@
 type ScreenFrameProps = {
   src: string;
   alt: string;
-  label: string;
+  label?: string;
   width?: number;
 };
 
@@ -16,7 +16,9 @@ export function ScreenFrame({ src, alt, label, width = 214 }: ScreenFrameProps) 
           className="block w-full rounded-[17px]"
         />
       </div>
-      <figcaption className="label-mono mt-3 text-mute">{label}</figcaption>
+      {label ? (
+        <figcaption className="label-mono mt-3 text-mute">{label}</figcaption>
+      ) : null}
     </figure>
   );
 }
