@@ -4,60 +4,91 @@ import { ArrowIcon, BookmarkIcon, PlayIcon, SearchIcon } from "./icons";
 const features = [
   {
     icon: <SearchIcon />,
-    title: "Discover",
-    body: "Browse trending, seasonal and top-rated titles pulled from open metadata sources.",
+    label: "Find",
+    title: "What's airing, not what's promoted",
+    body: "Trending, latest episodes and search that tells you upfront whether a title is subbed or dubbed.",
     hash: "discover",
   },
   {
-    icon: <BookmarkIcon />,
-    title: "Library",
-    body: "Keep your own list on your own device, with progress that stays in sync offline.",
-    hash: "library",
+    icon: <PlayIcon />,
+    label: "Watch",
+    title: "Press play and keep going",
+    body: "Episodes queue up on their own, and you can switch sub or dub on any title that has both.",
+    hash: "player",
   },
   {
-    icon: <PlayIcon />,
-    title: "Player",
-    body: "A focused player with subs, dubs and gesture controls — nothing else in the way.",
-    hash: "player",
+    icon: <BookmarkIcon />,
+    label: "Keep",
+    title: "A list that stays on your phone",
+    body: "Save anything from its details page. Nothing syncs anywhere, nothing asks you to sign in.",
+    hash: "library",
   },
 ] as const;
 
+const manifest = [
+  ["Version", "1.0.0 stable"],
+  ["Platform", "Android 8.0+"],
+  ["Built with", "Expo · React Native"],
+  ["License", "Apache-2.0"],
+  ["Accounts", "None"],
+  ["Trackers", "None"],
+];
+
 export function Features() {
   return (
-    <section className="border-t border-[color:var(--line-soft)] px-5 py-24">
-      <div className="mx-auto max-w-5xl">
-        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-lime-brand">
-          Why Daichi
-        </p>
-        <h2 className="mx-auto mt-4 max-w-xl text-center font-display text-3xl font-bold tracking-[-0.025em] text-ink sm:text-4xl">
-          Everything you need, nothing you don't
-        </h2>
+    <>
+      <section className="border-t border-[color:var(--line-soft)] px-5 py-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="label-mono text-lime-brand">Three things it does</p>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <Link
-              key={f.title}
-              to="/learn-more"
-              hash={f.hash}
-              className="group rounded-[18px] border border-line bg-panel px-8 py-9 transition-all duration-200 hover:-translate-y-1 hover:border-[color:var(--lime)] hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.9)]"
-            >
-              <span className="flex size-[46px] items-center justify-center rounded-[14px] bg-lime-soft text-lime-brand">
-                {f.icon}
-              </span>
-              <h3 className="mt-6 font-display text-lg font-bold tracking-[-0.02em] text-ink">
-                {f.title}
-              </h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-mute">{f.body}</p>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-lime-brand">
-                Read more
-                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                  <ArrowIcon />
+          <div className="mt-10 divide-y divide-[color:var(--line-soft)] border-y border-[color:var(--line-soft)]">
+            {features.map((f) => (
+              <Link
+                key={f.label}
+                to="/learn-more"
+                hash={f.hash}
+                className="group grid items-start gap-6 py-9 transition-colors duration-150 md:grid-cols-[130px_1fr_auto]"
+              >
+                <span className="flex items-center gap-3 text-lime-brand">
+                  {f.icon}
+                  <span className="label-mono">{f.label}</span>
                 </span>
-              </span>
-            </Link>
-          ))}
+                <span>
+                  <h3 className="font-display text-[26px] font-bold uppercase leading-[1.05] tracking-[0.01em] text-ink transition-colors duration-150 group-hover:text-lime-brand sm:text-[32px]">
+                    {f.title}
+                  </h3>
+                  <span className="mt-3 block max-w-[52ch] text-[14px] leading-[1.7] text-mute">
+                    {f.body}
+                  </span>
+                </span>
+                <span className="label-mono inline-flex items-center gap-2 text-mute transition-colors group-hover:text-ink">
+                  Read
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="px-5 pb-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="label-mono text-mute">The build</p>
+          <dl className="mt-6 grid gap-x-10 border-t border-[color:var(--line-soft)] sm:grid-cols-2 lg:grid-cols-3">
+            {manifest.map(([k, v]) => (
+              <div
+                key={k}
+                className="flex items-baseline justify-between gap-4 border-b border-[color:var(--line-soft)] py-4"
+              >
+                <dt className="label-mono text-mute">{k}</dt>
+                <dd className="font-mono text-[13px] text-ink">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    </>
   );
 }

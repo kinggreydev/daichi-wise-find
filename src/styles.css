@@ -19,9 +19,11 @@
  */
 
 @theme inline {
-  --font-display: "Bricolage Grotesque", ui-sans-serif, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-jp: "Noto Sans JP", sans-serif;
+
   --color-lime-brand: var(--lime);
   --color-lime-soft: var(--lime-soft);
   --color-panel: var(--panel);
@@ -163,7 +165,39 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
 }
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility rail {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--line) 0 10px,
+    transparent 10px 20px
+  );
+  height: 1px;
+}
+
+@utility screen-card {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--lime);
+  }
+}
+
 
 @keyframes daichi-rise {
   from {

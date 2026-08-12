@@ -1,26 +1,27 @@
 export function SiteFooter() {
-  const items = [
-    { label: "Open-source", href: "https://github.com" },
-    { label: "Apache Licensed", href: "https://www.apache.org/licenses/LICENSE-2.0" },
-    { label: "GitHub", href: "https://github.com" },
-  ];
-
   return (
-    <footer className="border-t border-[color:var(--line-soft)] px-5 py-10">
-      <p className="flex flex-wrap items-center justify-center gap-2 text-center text-[13px] text-mute">
-        {items.map((item) => (
-          <span key={item.label} className="flex items-center gap-2">
-            <a
-              href={item.href}
-              className="transition-colors duration-150 hover:text-ink"
-            >
-              {item.label}
-            </a>
-            <span className="text-line">·</span>
-          </span>
-        ))}
-        <span>Copyright © 2026 Daichi</span>
-      </p>
+    <footer className="border-t border-[color:var(--line-soft)] px-5 py-9">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
+        <p className="label-mono flex flex-wrap items-center gap-3 text-mute">
+          <a href="https://github.com" className="transition-colors hover:text-ink">
+            Open source
+          </a>
+          <span className="text-line">/</span>
+          <a
+            href="https://www.apache.org/licenses/LICENSE-2.0"
+            className="transition-colors hover:text-ink"
+          >
+            Apache-2.0
+          </a>
+          <span className="text-line">/</span>
+          <a href="https://github.com" className="transition-colors hover:text-ink">
+            GitHub
+          </a>
+        </p>
+        <p className="label-mono text-mute">
+          <span className="font-jp font-black text-lime-brand">大智</span> © 2026 Daichi
+        </p>
+      </div>
     </footer>
   );
 }
