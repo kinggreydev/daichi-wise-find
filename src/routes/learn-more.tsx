@@ -1,7 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteNav } from "@/components/landing/SiteNav";
-import { PhoneMockup } from "@/components/landing/PhoneMockup";
+import { ScreenFrame } from "@/components/landing/ScreenFrame";
 import homeAsset from "@/assets/daichi-home.png.asset.json";
 import detailsAsset from "@/assets/daichi-details.png.asset.json";
 import playerAsset from "@/assets/daichi-player.png.asset.json";
@@ -10,17 +10,17 @@ import libraryAsset from "@/assets/daichi-library.png.asset.json";
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
     meta: [
-      { title: "Everything Daichi does — Learn more" },
+      { title: "Inside Daichi — every screen, explained" },
       {
         name: "description",
         content:
-          "A closer look at Daichi: discovery, anime details, the player and your list — one section each, with real screenshots from the Android app.",
+          "A screen-by-screen look at Daichi for Android: home and discovery, the watch screen, anime details, and your saved list.",
       },
-      { property: "og:title", content: "Everything Daichi does — Learn more" },
+      { property: "og:title", content: "Inside Daichi — every screen, explained" },
       {
         property: "og:description",
         content:
-          "Discovery, anime details, the player and your list — the four parts of Daichi, explained with real screenshots.",
+          "Home, watch, details and your list — the four screens of Daichi, with real captures from the Android app.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,153 +33,143 @@ export const Route = createFileRoute("/learn-more")({
 const sections = [
   {
     id: "discover",
-    eyebrow: "Discover",
-    title: "Find something to watch in seconds.",
-    body: "The home screen opens on what's airing right now — no algorithmic feed, no sponsored rows. Search is one tap away and tells you upfront whether a title is subbed or dubbed.",
-    bullets: [
-      "Trending ranked list, refreshed daily",
-      "Latest episodes across every airing show",
-      "Search results labelled sub / dub per title",
+    label: "Screen 01",
+    eyebrow: "Home & discovery",
+    title: "Find something in seconds",
+    body: "The app opens on what's airing right now — no algorithmic feed, no sponsored rows. Search sits one tap away and labels each result sub or dub before you commit.",
+    rows: [
+      ["Hot trends", "Ranked, refreshed daily"],
+      ["Latest episodes", "Across every airing show"],
+      ["Search", "Sub / dub marked per title"],
     ],
     image: homeAsset.url,
     alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
   },
   {
-    id: "details",
-    eyebrow: "Anime Details",
-    title: "Everything about a show on one screen.",
-    body: "Synopsis, score, studio, format and premiere date sit together without a tab to hunt through. Cast and voice actors are listed for the shows that have them.",
-    bullets: [
-      "Expandable synopsis, collapsed by default",
-      "Characters and Japanese voice actors",
-      '"You Might Also Like" recommendations',
-    ],
-    image: detailsAsset.url,
-    alt: "Daichi anime details screen showing the story synopsis, technical details and voice actors",
-  },
-  {
     id: "player",
-    eyebrow: "Player",
-    title: "Press play, keep watching.",
-    body: "Episodes queue up automatically so a session doesn't stop between them. Switch between subbed and dubbed sources on any title that offers both.",
-    bullets: [
-      "Episode list with search and sort",
-      "Up-next queue that carries across a season",
-      "Sub / dub switchable per title",
+    label: "Screen 02",
+    eyebrow: "Watch",
+    title: "Press play, keep watching",
+    body: "Pick a language, pick an episode, and the next one is already queued. The episode list is searchable and sortable for long-running shows.",
+    rows: [
+      ["Sources", "Subbed and dubbed"],
+      ["Queue", "Auto-advance across a season"],
+      ["Episodes", "Search and sort"],
     ],
     image: playerAsset.url,
-    alt: "Daichi player entry screen with watch subbed and dub buttons over a hero image",
+    alt: "Daichi watch screen with watch subbed and dub buttons over a hero image",
+  },
+  {
+    id: "details",
+    label: "Screen 03",
+    eyebrow: "Anime details",
+    title: "The whole show on one screen",
+    body: "Synopsis, score, studio, format and premiere date sit together — no tabs to hunt through. Cast and Japanese voice actors are listed where the data exists.",
+    rows: [
+      ["Synopsis", "Expandable, collapsed by default"],
+      ["Credits", "Characters and voice actors"],
+      ["Related", "You might also like"],
+    ],
+    image: detailsAsset.url,
+    alt: "Daichi details screen showing synopsis, technical details and voice actors",
   },
   {
     id: "library",
-    eyebrow: "My List",
-    title: "Your list, saved on your device.",
-    body: "Anything you save shows up as a grid you can scan at a glance, with scores kept alongside the poster. Nothing is synced anywhere and nothing asks you to sign in.",
-    bullets: [
-      "Grid view of every saved title",
-      "Add or remove from any details page",
-      "No account, no login wall",
+    label: "Screen 04",
+    eyebrow: "My list",
+    title: "Saved on your device, nowhere else",
+    body: "Anything you save shows up as a grid you can scan at a glance, scores kept next to the poster. Nothing is uploaded and nothing asks you to sign in.",
+    rows: [
+      ["View", "Poster grid with scores"],
+      ["Editing", "Add or remove from any details page"],
+      ["Storage", "Local only, no account"],
     ],
     image: libraryAsset.url,
-    alt: "Daichi library grid of saved anime titles with star ratings",
+    alt: "Daichi list of saved anime titles with star ratings",
   },
 ] as const;
-
-const stack = [
-  "Expo",
-  "React Native",
-  "TypeScript",
-  "Expo Router",
-  "NativeWind",
-  "EAS Build",
-];
 
 function LearnMore() {
   return (
     <div className="min-h-screen bg-background font-sans text-[15px] leading-relaxed text-ink">
       <SiteNav variant="docs" />
 
-      <main className="mx-auto w-full max-w-5xl px-5">
-        <div className="pb-10 pt-14">
+      <main className="mx-auto w-full max-w-6xl px-5">
+        <div className="pb-12 pt-14">
           <Link
             to="/"
-            className="text-[13px] text-mute transition-colors duration-150 hover:text-lime-brand"
+            className="label-mono text-mute transition-colors duration-150 hover:text-lime-brand"
           >
-            ← Back to Daichi
+            ← Back
           </Link>
-          <p className="mt-8 font-jp text-[13px] font-black text-lime-brand">大智</p>
-          <h1 className="mt-3 font-display text-[40px] font-extrabold leading-[1.1] tracking-[-0.03em] text-ink">
-            Everything Daichi does.
+          <p className="label-mono mt-10 text-lime-brand">Four screens</p>
+          <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.75rem,7vw,5rem)] font-extrabold uppercase leading-[0.9] text-ink">
+            Inside the app
           </h1>
-          <p className="mt-4 max-w-[560px] text-mute">
-            Four parts to the app — discovery, details, playback and your saved
-            list. Here's what each one looks like in practice.
+          <p className="mt-5 max-w-[52ch] text-mute">
+            Everything Daichi does lives on four screens. Here's what each one
+            looks like, captured from the Android build.
           </p>
         </div>
 
-        <div>
-          {sections.map((s, i) => {
-            const reversed = i % 2 === 1;
-            return (
-              <section
-                key={s.id}
-                id={s.id}
-                className={`scroll-mt-24 py-[72px] ${
-                  i === sections.length - 1
-                    ? ""
-                    : "border-b border-[color:var(--line)]"
-                }`}
-              >
-                <div className="grid items-center gap-14 min-[820px]:grid-cols-[1fr_1.15fr]">
-                  <div className={reversed ? "min-[820px]:order-2" : "min-[820px]:order-1"}>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-lime-brand">
-                      {s.eyebrow}
-                    </p>
-                    <h2 className="mt-4 font-display text-[26px] font-bold leading-[1.2] tracking-[-0.025em] text-ink">
-                      {s.title}
-                    </h2>
-                    <p className="mt-4 max-w-[46ch] text-[15px] leading-[1.7] text-mute">
-                      {s.body}
-                    </p>
-                    <ul className="mt-6 space-y-2">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex gap-3 text-[14px] text-mute">
-                          <span aria-hidden="true" className="text-lime-brand">
-                            —
-                          </span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+        {sections.map((s, i) => {
+          const reversed = i % 2 === 1;
+          return (
+            <section
+              key={s.id}
+              id={s.id}
+              className="scroll-mt-20 border-t border-[color:var(--line-soft)] py-16"
+            >
+              <div className="grid items-start gap-12 md:grid-cols-[1fr_auto]">
+                <div className={reversed ? "md:order-2" : "md:order-1"}>
+                  <div className="flex items-baseline gap-4">
+                    <span className="label-mono text-lime-brand">{s.label}</span>
+                    <span className="label-mono text-mute">{s.eyebrow}</span>
                   </div>
-                  <div className={reversed ? "min-[820px]:order-1" : "min-[820px]:order-2"}>
-                    <PhoneMockup
-                      src={s.image}
-                      alt={s.alt}
-                      width={230}
-                      animate={false}
-                    />
-                  </div>
+                  <h2 className="mt-5 max-w-[24ch] font-display text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] text-ink">
+                    {s.title}
+                  </h2>
+                  <p className="mt-5 max-w-[52ch] text-[15px] leading-[1.75] text-mute">
+                    {s.body}
+                  </p>
+                  <dl className="mt-8 max-w-[520px] border-t border-[color:var(--line-soft)]">
+                    {s.rows.map(([k, v]) => (
+                      <div
+                        key={k}
+                        className="flex items-baseline justify-between gap-6 border-b border-[color:var(--line-soft)] py-3.5"
+                      >
+                        <dt className="label-mono text-mute">{k}</dt>
+                        <dd className="text-right font-mono text-[13px] text-ink">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
-              </section>
-            );
-          })}
-        </div>
+                <div className={reversed ? "md:order-1" : "md:order-2"}>
+                  <ScreenFrame
+                    src={s.image}
+                    alt={s.alt}
+                    label={s.eyebrow}
+                    width={236}
+                  />
+                </div>
+              </div>
+            </section>
+          );
+        })}
 
-        <section className="border-t border-[color:var(--line)] py-16 text-center">
-          <h2 className="font-display text-[26px] font-bold tracking-[-0.025em] text-ink">
-            Built with
-          </h2>
-          <ul className="mt-7 flex flex-wrap justify-center gap-3">
-            {stack.map((item) => (
-              <li
-                key={item}
-                className="rounded-full border border-line px-[18px] py-[9px] text-[13px] text-mute"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+        <section className="border-t border-[color:var(--line-soft)] py-16">
+          <p className="label-mono text-mute">Ready</p>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-6">
+            <h2 className="max-w-[20ch] font-display text-[clamp(2rem,4vw,3rem)] font-extrabold uppercase leading-[0.95] text-ink">
+              Put it on your phone
+            </h2>
+            <a
+              href="https://github.com"
+              className="label-mono rounded-full bg-lime-brand px-6 py-3 font-medium text-background transition-all duration-150 hover:-translate-y-px hover:shadow-[0_10px_28px_-10px_var(--lime)]"
+            >
+              Download for Android
+            </a>
+          </div>
         </section>
       </main>
 
