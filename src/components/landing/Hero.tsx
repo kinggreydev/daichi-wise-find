@@ -1,48 +1,79 @@
 import { Link } from "@tanstack/react-router";
-import { PhoneMockup } from "./PhoneMockup";
+import { ScreenFrame } from "./ScreenFrame";
+import homeAsset from "@/assets/daichi-home.png.asset.json";
+import detailsAsset from "@/assets/daichi-details.png.asset.json";
+import playerAsset from "@/assets/daichi-player.png.asset.json";
+import libraryAsset from "@/assets/daichi-library.png.asset.json";
+
+const strip = [
+  {
+    src: homeAsset.url,
+    label: "01 — Home",
+    alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
+  },
+  {
+    src: playerAsset.url,
+    label: "02 — Watch",
+    alt: "Daichi watch screen with subbed and dubbed buttons over a hero image",
+  },
+  {
+    src: detailsAsset.url,
+    label: "03 — Details",
+    alt: "Daichi details screen with synopsis, studio and voice actors",
+  },
+  {
+    src: libraryAsset.url,
+    label: "04 — My list",
+    alt: "Daichi list of saved anime titles with scores",
+  },
+];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-5 pt-24 pb-20">
-      <div className="hero-glow left-1/2 top-4 -translate-x-1/2" aria-hidden="true" />
+    <section className="relative overflow-hidden pb-4 pt-16 sm:pt-24">
+      <div className="hero-glow -left-24 top-0" aria-hidden="true" />
 
-      <div className="relative mx-auto max-w-3xl text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--lime-soft)] bg-lime-soft px-3 py-1.5">
-          <span className="font-jp text-[13px] font-black text-lime-brand">大智</span>
-          <span className="text-[12px] text-mute">/ great wisdom</span>
-        </span>
+      <div className="relative mx-auto max-w-6xl px-5">
+        <p className="label-mono text-lime-brand">大智 — great wisdom</p>
 
-        <h1 className="mt-7 font-display text-5xl leading-[1.05] tracking-[-0.035em] sm:text-6xl">
-          <span className="block font-extrabold text-ink">Anime, tracked</span>
-          <span className="block font-normal text-mute">the way it should be.</span>
+        <h1 className="mt-5 max-w-4xl font-display text-[clamp(3.25rem,10vw,7.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.01em] text-ink">
+          Every anime you
+          <br />
+          <span className="text-mute">meant to finish.</span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-[460px] text-[15px] leading-relaxed text-mute">
-          A free, open-source anime discovery app for Android. No accounts, no ads, no noise.
-        </p>
+        <div className="mt-9 grid gap-8 border-t border-[color:var(--line-soft)] pt-7 md:grid-cols-[1fr_auto] md:items-end">
+          <p className="max-w-[46ch] text-[15px] leading-[1.7] text-mute">
+            Daichi is an open-source Android app for finding anime, watching it
+            subbed or dubbed, and keeping your own list on your own phone. No
+            account, no ads, no feed deciding for you.
+          </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="https://github.com"
-            className="rounded-full bg-lime-brand px-6 py-3 text-sm font-semibold text-background transition-all duration-150 hover:-translate-y-px hover:shadow-[0_8px_24px_-8px_var(--lime)]"
-          >
-            Download
-          </a>
-          <Link
-            to="/learn-more"
-            className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors duration-150 hover:border-[color:var(--lime)]"
-          >
-            Learn more
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://github.com"
+              className="label-mono rounded-full bg-lime-brand px-6 py-3 font-medium text-background transition-all duration-150 hover:-translate-y-px hover:shadow-[0_10px_28px_-10px_var(--lime)]"
+            >
+              Download for Android
+            </a>
+            <Link
+              to="/learn-more"
+              className="label-mono rounded-full border border-line px-6 py-3 text-ink transition-colors duration-150 hover:border-[color:var(--lime)]"
+            >
+              See the app
+            </Link>
+          </div>
         </div>
+      </div>
 
-        <p className="mt-7 flex items-center justify-center gap-2 text-[12px] text-mute">
-          <span className="animate-pulse-dot inline-block size-1.5 rounded-full bg-lime-brand" />
-          Latest stable release — Daichi v1.0.0
-        </p>
-
-        <div className="mt-16">
-          <PhoneMockup />
+      <div className="relative mt-16">
+        <div className="rail mx-auto max-w-6xl" aria-hidden="true" />
+        <div className="animate-rise mt-8 overflow-x-auto pb-4">
+          <div className="mx-auto flex w-max gap-5 px-5 md:px-[max(1.25rem,calc(50vw-36rem))]">
+            {strip.map((s) => (
+              <ScreenFrame key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
