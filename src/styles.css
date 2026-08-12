@@ -19,9 +19,11 @@
  */
 
 @theme inline {
-  --font-display: "Bricolage Grotesque", ui-sans-serif, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-jp: "Noto Sans JP", sans-serif;
+
   --color-lime-brand: var(--lime);
   --color-lime-soft: var(--lime-soft);
   --color-panel: var(--panel);
