@@ -8,22 +8,22 @@ import libraryAsset from "@/assets/daichi-library.png.asset.json";
 const strip = [
   {
     src: homeAsset.url,
-    label: "01 — Home",
+    label: "Home",
     alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
   },
   {
     src: playerAsset.url,
-    label: "02 — Watch",
+    label: "Watch",
     alt: "Daichi watch screen with subbed and dubbed buttons over a hero image",
   },
   {
     src: detailsAsset.url,
-    label: "03 — Details",
+    label: "Details",
     alt: "Daichi details screen with synopsis, studio and voice actors",
   },
   {
     src: libraryAsset.url,
-    label: "04 — My list",
+    label: "My list",
     alt: "Daichi list of saved anime titles with scores",
   },
 ];
