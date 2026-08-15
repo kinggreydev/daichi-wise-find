@@ -47,7 +47,7 @@ export function Features() {
                 key={f.label}
                 to="/learn-more"
                 hash={f.hash}
-                className="group grid items-start gap-6 py-9 transition-colors duration-150 md:grid-cols-[130px_1fr_auto]"
+                className="group grid items-start gap-x-6 gap-y-4 py-9 transition-colors duration-150 md:grid-cols-[120px_minmax(0,1fr)_auto]"
               >
                 <span className="flex items-center gap-3 text-lime-brand">
                   {f.icon}

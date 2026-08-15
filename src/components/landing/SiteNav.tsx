@@ -30,10 +30,10 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
 
         <span className="label-mono hidden text-mute sm:inline">Android · v1.0.0</span>
 
-        <div className="ml-auto flex items-center gap-6">
+        <div className="ml-auto flex items-center gap-4 sm:gap-6">
           <Link
             to={isDocs ? "/" : "/learn-more"}
-            className="nav-link label-mono hidden text-mute transition-colors hover:text-ink sm:inline"
+            className="nav-link label-mono text-mute transition-colors hover:text-ink"
           >
             {isDocs ? "Home" : "The app"}
           </Link>
@@ -50,6 +50,7 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
             Get the APK
           </a>
         </div>
+
       </nav>
     </header>
   );
