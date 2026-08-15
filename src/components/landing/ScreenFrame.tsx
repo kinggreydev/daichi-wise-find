@@ -7,7 +7,7 @@ type ScreenFrameProps = {
 
 export function ScreenFrame({ src, alt, label, width = 214 }: ScreenFrameProps) {
   return (
-    <figure className="w-full shrink-0" style={{ maxWidth: width }}>
+    <figure className="max-w-full shrink-0" style={{ width }}>
       <div className="screen-card overflow-hidden rounded-[22px] border border-line bg-panel p-1.5 shadow-[0_30px_60px_-34px_rgba(0,0,0,0.95)]">
         <img
           src={src}
