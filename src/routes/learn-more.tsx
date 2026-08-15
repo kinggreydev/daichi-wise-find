@@ -33,8 +33,8 @@ export const Route = createFileRoute("/learn-more")({
 const sections = [
   {
     id: "discover",
-    label: "Screen 01",
-    eyebrow: "Home & discovery",
+    label: "Home",
+    eyebrow: "Opens on what's airing",
     title: "Find something in seconds",
     body: "The app opens on what's airing right now — no algorithmic feed, no sponsored rows. Search sits one tap away and labels each result sub or dub before you commit.",
     rows: [
@@ -47,8 +47,8 @@ const sections = [
   },
   {
     id: "player",
-    label: "Screen 02",
-    eyebrow: "Watch",
+    label: "Watch",
+    eyebrow: "Sub or dub, your call",
     title: "Press play, keep watching",
     body: "Pick a language, pick an episode, and the next one is already queued. The episode list is searchable and sortable for long-running shows.",
     rows: [
@@ -61,8 +61,8 @@ const sections = [
   },
   {
     id: "details",
-    label: "Screen 03",
-    eyebrow: "Anime details",
+    label: "Details",
+    eyebrow: "One screen, whole show",
     title: "The whole show on one screen",
     body: "Synopsis, score, studio, format and premiere date sit together — no tabs to hunt through. Cast and Japanese voice actors are listed where the data exists.",
     rows: [
@@ -75,8 +75,8 @@ const sections = [
   },
   {
     id: "library",
-    label: "Screen 04",
-    eyebrow: "My list",
+    label: "My list",
+    eyebrow: "Local to your phone",
     title: "Saved on your device, nowhere else",
     body: "Anything you save shows up as a grid you can scan at a glance, scores kept next to the poster. Nothing is uploaded and nothing asks you to sign in.",
     rows: [
@@ -102,7 +102,7 @@ function LearnMore() {
           >
             ← Back
           </Link>
-          <p className="label-mono mt-10 text-lime-brand">Four screens</p>
+          <p className="label-mono mt-10 text-lime-brand">Every screen, explained</p>
           <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.75rem,7vw,5rem)] font-extrabold uppercase leading-[0.9] text-ink">
             Inside the app
           </h1>
@@ -120,9 +120,9 @@ function LearnMore() {
               id={s.id}
               className="scroll-mt-20 border-t border-[color:var(--line-soft)] py-16"
             >
-              <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16">
                 <div className={reversed ? "md:order-2" : "md:order-1"}>
-                  <div className="flex items-baseline gap-4">
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <span className="label-mono text-lime-brand">{s.label}</span>
                     <span className="label-mono text-mute">{s.eyebrow}</span>
                   </div>
@@ -132,19 +132,19 @@ function LearnMore() {
                   <p className="mt-5 max-w-[52ch] text-[15px] leading-[1.75] text-mute">
                     {s.body}
                   </p>
-                  <dl className="mt-8 max-w-[520px] border-t border-[color:var(--line-soft)]">
+                  <dl className="mt-8 max-w-[560px] border-t border-[color:var(--line-soft)]">
                     {s.rows.map(([k, v]) => (
                       <div
                         key={k}
-                        className="flex items-baseline justify-between gap-6 border-b border-[color:var(--line-soft)] py-3.5"
+                        className="grid gap-1 border-b border-[color:var(--line-soft)] py-3.5 sm:grid-cols-[minmax(0,150px)_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                       >
                         <dt className="label-mono text-mute">{k}</dt>
-                        <dd className="text-right font-mono text-[13px] text-ink">{v}</dd>
+                        <dd className="font-mono text-[13px] text-ink sm:text-right">{v}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
-                <div className={`flex justify-center ${reversed ? "md:order-1 md:justify-start" : "md:order-2 md:justify-end"}`}>
+                <div className={`flex justify-center ${reversed ? "md:order-1" : "md:order-2"}`}>
                   <ScreenFrame src={s.image} alt={s.alt} width={252} />
                 </div>
               </div>
