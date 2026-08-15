@@ -176,6 +176,8 @@
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
+  /* compensate for the trailing letter-space so centered text sits optically centered */
+  text-indent: 0.14em;
   text-transform: uppercase;
 }
 
