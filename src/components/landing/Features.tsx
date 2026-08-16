@@ -37,8 +37,8 @@ const manifest = [
 export function Features() {
   return (
     <>
-      <section className="border-t border-[color:var(--line-soft)] px-5 py-20">
-        <div className="mx-auto max-w-6xl">
+      <section className="border-t border-[color:var(--line-soft)] py-20">
+        <div className="mx-auto w-full max-w-6xl px-5">
           <p className="label-mono text-lime-brand">Three things it does</p>
 
           <div className="mt-10 divide-y divide-[color:var(--line-soft)] border-y border-[color:var(--line-soft)]">
@@ -73,8 +73,8 @@ export function Features() {
         </div>
       </section>
 
-      <section className="px-5 pb-24">
-        <div className="mx-auto max-w-6xl">
+      <section className="pb-24">
+        <div className="mx-auto w-full max-w-6xl px-5">
           <p className="label-mono text-mute">The build</p>
           <dl className="mt-6 grid gap-x-10 border-t border-[color:var(--line-soft)] sm:grid-cols-2 lg:grid-cols-3">
             {manifest.map(([k, v]) => (
