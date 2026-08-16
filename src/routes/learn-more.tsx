@@ -120,7 +120,13 @@ function LearnMore() {
               id={s.id}
               className="scroll-mt-20 border-t border-[color:var(--line-soft)] py-16"
             >
-              <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16">
+              <div
+                className={`grid items-center gap-10 md:gap-16 ${
+                  reversed
+                    ? "md:grid-cols-[auto_minmax(0,1fr)]"
+                    : "md:grid-cols-[minmax(0,1fr)_auto]"
+                }`}
+              >
                 <div className={reversed ? "md:order-2" : "md:order-1"}>
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <span className="label-mono text-lime-brand">{s.label}</span>
@@ -147,6 +153,7 @@ function LearnMore() {
                 <div className={`flex justify-center ${reversed ? "md:order-1" : "md:order-2"}`}>
                   <ScreenFrame src={s.image} alt={s.alt} width={252} />
                 </div>
+
               </div>
             </section>
           );

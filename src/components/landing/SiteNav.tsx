@@ -21,9 +21,9 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
       }`}
     >
       <nav className="mx-auto flex h-14 w-full max-w-6xl items-center gap-6 px-5">
-        <Link to="/" className="flex shrink-0 items-baseline gap-2">
-          <span className="font-jp text-[15px] font-black text-lime-brand">大智</span>
-          <span className="font-display text-[19px] font-extrabold uppercase tracking-[0.02em] text-ink">
+        <Link to="/" className="flex shrink-0 items-center gap-2">
+          <span className="font-jp text-[15px] font-black leading-none text-lime-brand">大智</span>
+          <span className="font-display text-[19px] font-extrabold uppercase leading-none tracking-[0.02em] text-ink">
             Daichi
           </span>
         </Link>

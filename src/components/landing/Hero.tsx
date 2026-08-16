@@ -67,9 +67,11 @@ export function Hero() {
       </div>
 
       <div className="relative mt-16">
-        <div className="rail mx-auto max-w-6xl" aria-hidden="true" />
+        <div className="mx-auto w-full max-w-6xl px-5">
+          <div className="rail" aria-hidden="true" />
+        </div>
         <div className="animate-rise mt-8 overflow-x-auto pb-4">
-          <div className="mx-auto flex w-max gap-5 px-5 md:px-[max(1.25rem,calc(50vw-36rem))]">
+          <div className="flex w-max gap-5 px-5 md:px-[max(1.25rem,calc(50vw-36rem+1.25rem))]">
             {strip.map((s) => (
               <ScreenFrame key={s.label} {...s} />
             ))}
