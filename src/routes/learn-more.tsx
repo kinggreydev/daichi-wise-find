@@ -2,10 +2,10 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
-import homeAsset from "@/assets/daichi-home.png.asset.json";
-import detailsAsset from "@/assets/daichi-details.png.asset.json";
-import playerAsset from "@/assets/daichi-player.png.asset.json";
-import libraryAsset from "@/assets/daichi-library.png.asset.json";
+import Home from "@/assets/home.png";
+import Details from "@/assets/anime-details.png";
+import Library from "@/assets/library-with-anime.png";
+import Player from "@/assets/player-playing.png";
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
@@ -42,7 +42,7 @@ const sections = [
       ["Latest episodes", "Across every airing show"],
       ["Search", "Sub / dub marked per title"],
     ],
-    image: homeAsset.url,
+    image: Home,
     alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
   },
   {
@@ -56,7 +56,7 @@ const sections = [
       ["Queue", "Auto-advance across a season"],
       ["Episodes", "Search and sort"],
     ],
-    image: playerAsset.url,
+    image: Player,
     alt: "Daichi watch screen with watch subbed and dub buttons over a hero image",
   },
   {
@@ -70,7 +70,7 @@ const sections = [
       ["Credits", "Characters and voice actors"],
       ["Related", "You might also like"],
     ],
-    image: detailsAsset.url,
+    image: Details,
     alt: "Daichi details screen showing synopsis, technical details and voice actors",
   },
   {
@@ -84,7 +84,7 @@ const sections = [
       ["Editing", "Add or remove from any details page"],
       ["Storage", "Local only, no account"],
     ],
-    image: libraryAsset.url,
+    image: Library,
     alt: "Daichi list of saved anime titles with star ratings",
   },
 ] as const;
@@ -107,8 +107,8 @@ function LearnMore() {
             Inside the app
           </h1>
           <p className="mt-5 max-w-[52ch] text-mute">
-            Everything Daichi does lives on four screens. Here's what each one
-            looks like, captured from the Android build.
+            Everything Daichi does lives on four screens. Here's what each one looks like, captured
+            from the Android build.
           </p>
         </div>
 
@@ -135,9 +135,7 @@ function LearnMore() {
                   <h2 className="mt-5 max-w-[24ch] font-display text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] text-ink">
                     {s.title}
                   </h2>
-                  <p className="mt-5 max-w-[52ch] text-[15px] leading-[1.75] text-mute">
-                    {s.body}
-                  </p>
+                  <p className="mt-5 max-w-[52ch] text-[15px] leading-[1.75] text-mute">{s.body}</p>
                   <dl className="mt-8 max-w-[560px] border-t border-[color:var(--line-soft)]">
                     {s.rows.map(([k, v]) => (
                       <div
@@ -153,7 +151,6 @@ function LearnMore() {
                 <div className={`flex justify-center ${reversed ? "md:order-1" : "md:order-2"}`}>
                   <ScreenFrame src={s.image} alt={s.alt} width={252} />
                 </div>
-
               </div>
             </section>
           );

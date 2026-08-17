@@ -33,11 +33,13 @@ Use this as a build spec for recreating the Daichi marketing site (e.g. in Next.
 ## Layout — section by section
 
 **Nav** (sticky, blurred on scroll)
+
 - Left: 24px rounded-icon logo + "Daichi" wordmark, weight 700
 - Center-left: fake search input, placeholder "Search", with a `K` kbd hint on the right edge
 - Right: text links (Learn more, GitHub) with an animated underline on hover, plus a solid lime "Download" pill button that lifts 1px on hover with a soft lime shadow
 
 **Hero** (centered, generous vertical padding ~96px top)
+
 - A soft radial lime glow (520px circle, 10% opacity) positioned behind the content, not a hard shape
 - Kicker pill: lime-tinted background, lime border at 25% opacity, containing "大智" in Noto Sans JP + "/ great wisdom" in muted Inter
 - H1: two lines, first line full-weight ink color, second line muted/lighter weight — e.g. "Anime, tracked" / "the way it should be."
@@ -47,6 +49,7 @@ Use this as a build spec for recreating the Daichi marketing site (e.g. in Next.
 - One hero phone mockup below everything: 286px wide, dark bezel border (#16180f, ~7px), rounded 34px, heavy soft drop shadow, fades/rises in on page load (translateY 18px → 0, 0.7s cubic-bezier(0.16,1,0.3,1))
 
 **Feature section** (below hero, NOT part of the hero — its own moment)
+
 - Small uppercase lime eyebrow: "Why Daichi"
 - Centered heading: "Everything you need, nothing you don't"
 - Three-column card grid (stacks to 1 column under 760px), 20px gap
@@ -56,6 +59,7 @@ Use this as a build spec for recreating the Daichi marketing site (e.g. in Next.
 - Cards: **Discover** (search icon) / **Library** (bookmark icon) / **Player** (play icon) — link out to `learn-more.html#discover`, `#library`, `#player`
 
 **Footer**
+
 - Single centered line: "Open-source · Apache Licensed · GitHub · Copyright © 2026 Daichi", muted color, links brighten to ink on hover, `·` separators in the border-line color
 
 ## Motion rules

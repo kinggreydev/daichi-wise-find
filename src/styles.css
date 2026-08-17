@@ -120,7 +120,6 @@
   --sidebar-ring: var(--lime);
 }
 
-
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
@@ -182,11 +181,7 @@
 }
 
 @utility rail {
-  background-image: repeating-linear-gradient(
-    to right,
-    var(--line) 0 10px,
-    transparent 10px 20px
-  );
+  background-image: repeating-linear-gradient(to right, var(--line) 0 10px, transparent 10px 20px);
   height: 1px;
 }
 
@@ -199,7 +194,6 @@
     border-color: var(--lime);
   }
 }
-
 
 @keyframes daichi-rise {
   from {

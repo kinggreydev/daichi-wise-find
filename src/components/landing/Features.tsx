@@ -37,11 +37,11 @@ const manifest = [
 export function Features() {
   return (
     <>
-      <section className="border-t border-[color:var(--line-soft)] py-20">
+      <section className="border-t border-line-soft py-20">
         <div className="mx-auto w-full max-w-6xl px-5">
           <p className="label-mono text-lime-brand">Three things it does</p>
 
-          <div className="mt-10 divide-y divide-[color:var(--line-soft)] border-y border-[color:var(--line-soft)]">
+          <div className="mt-10 divide-y divide-line-soft border-y border-line-soft">
             {features.map((f) => (
               <Link
                 key={f.label}
@@ -76,11 +76,11 @@ export function Features() {
       <section className="pb-24">
         <div className="mx-auto w-full max-w-6xl px-5">
           <p className="label-mono text-mute">The build</p>
-          <dl className="mt-6 grid gap-x-10 border-t border-[color:var(--line-soft)] sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-6 grid gap-x-10 border-t border-line-soft sm:grid-cols-2 lg:grid-cols-3">
             {manifest.map(([k, v]) => (
               <div
                 key={k}
-                className="flex items-baseline justify-between gap-4 border-b border-[color:var(--line-soft)] py-4"
+                className="flex items-baseline justify-between gap-4 border-b border-line-soft py-4"
               >
                 <dt className="label-mono text-mute">{k}</dt>
                 <dd className="font-mono text-[13px] text-ink">{v}</dd>

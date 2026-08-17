@@ -50,7 +50,6 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
             Get the APK
           </a>
         </div>
-
       </nav>
     </header>
   );

@@ -1,28 +1,28 @@
 import { Link } from "@tanstack/react-router";
 import { ScreenFrame } from "./ScreenFrame";
-import homeAsset from "@/assets/daichi-home.png.asset.json";
-import detailsAsset from "@/assets/daichi-details.png.asset.json";
-import playerAsset from "@/assets/daichi-player.png.asset.json";
-import libraryAsset from "@/assets/daichi-library.png.asset.json";
+import Home from "@/assets/home.png";
+import Details from "@/assets/anime-details.png";
+import Library from "@/assets/library-with-anime.png";
+import Player from "@/assets/player-playing.png";
 
 const strip = [
   {
-    src: homeAsset.url,
+    src: Home,
     label: "Home",
     alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
   },
   {
-    src: playerAsset.url,
+    src: Player,
     label: "Watch",
     alt: "Daichi watch screen with subbed and dubbed buttons over a hero image",
   },
   {
-    src: detailsAsset.url,
+    src: Details,
     label: "Details",
     alt: "Daichi details screen with synopsis, studio and voice actors",
   },
   {
-    src: libraryAsset.url,
+    src: Library,
     label: "My list",
     alt: "Daichi list of saved anime titles with scores",
   },
@@ -42,11 +42,11 @@ export function Hero() {
           <span className="text-mute">meant to finish.</span>
         </h1>
 
-        <div className="mt-9 grid gap-8 border-t border-[color:var(--line-soft)] pt-7 md:grid-cols-[1fr_auto] md:items-end">
+        <div className="mt-9 grid gap-8 border-t border-line-soft pt-7 md:grid-cols-[1fr_auto] md:items-end">
           <p className="max-w-[46ch] text-[15px] leading-[1.7] text-mute">
-            Daichi is an open-source Android app for finding anime, watching it
-            subbed or dubbed, and keeping your own list on your own phone. No
-            account, no ads, no feed deciding for you.
+            Daichi is an open-source Android app for finding anime, watching it subbed or dubbed,
+            and keeping your own list on your own phone. No account, no ads, no feed deciding for
+            you.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -58,7 +58,7 @@ export function Hero() {
             </a>
             <Link
               to="/learn-more"
-              className="label-mono rounded-full border border-line px-6 py-3 text-ink transition-colors duration-150 hover:border-[color:var(--lime)]"
+              className="label-mono rounded-full border border-line px-6 py-3 text-ink transition-colors duration-150 hover:border-lime-brand"
             >
               See the app
             </Link>
