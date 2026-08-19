@@ -51,7 +51,7 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/lohit-dev/Daichi/releases/latest"
               className="label-mono rounded-full bg-lime-brand px-6 py-3 font-medium text-background transition-all duration-150 hover:-translate-y-px hover:shadow-[0_10px_28px_-10px_var(--lime)]"
             >
               Download for Android

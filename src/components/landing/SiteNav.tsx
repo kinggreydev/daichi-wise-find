@@ -38,13 +38,13 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
             {isDocs ? "Home" : "The app"}
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/lohit-dev/Daichi"
             className="nav-link label-mono hidden text-mute transition-colors hover:text-ink sm:inline"
           >
             Source
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/lohit-dev/Daichi/releases/download/v1.5.0/app-release.apk"
             className="label-mono rounded-full bg-lime-brand px-4 py-2 font-medium text-background transition-all duration-150 hover:-translate-y-px hover:shadow-[0_6px_20px_-6px_var(--lime)]"
           >
             Get the APK
