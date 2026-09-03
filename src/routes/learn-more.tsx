@@ -2,10 +2,19 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
-import Home from "@/assets/home.png";
-import Details from "@/assets/anime-details.png";
-import Library from "@/assets/library-with-anime.png";
-import Player from "@/assets/player-playing.png";
+import HomeImg from "@/assets/home.webp.asset.json";
+import DetailsImg from "@/assets/anime-details.webp.asset.json";
+import BrowseImg from "@/assets/browse.webp.asset.json";
+import EpisodesImg from "@/assets/episode-sheet.webp.asset.json";
+import DiscoverImg from "@/assets/discover.webp.asset.json";
+import CreditsImg from "@/assets/details-scrolled-1.png.asset.json";
+
+const Home = HomeImg.url;
+const Details = DetailsImg.url;
+const Library = BrowseImg.url;
+const Player = EpisodesImg.url;
+const Discover = DiscoverImg.url;
+const Credits = CreditsImg.url;
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
@@ -74,18 +83,46 @@ const sections = [
     alt: "Daichi details screen showing synopsis, technical details and voice actors",
   },
   {
+    id: "credits",
+    label: "Cast",
+    eyebrow: "Characters and voice actors",
+    title: "Who is behind the voice",
+    body: "Every details page carries the cast: characters paired with their Japanese voice actors, plus premiered, studio, genres and airing status in one plain table.",
+    rows: [
+      ["Cast", "Character to voice actor pairs"],
+      ["Facts", "Premiered, studio, genres, status"],
+      ["Related", "You might also like"],
+    ],
+    image: Credits,
+    alt: "Daichi details screen showing the story, facts table and voice actor pairs",
+  },
+  {
     id: "library",
-    label: "My list",
+    label: "Browse",
     eyebrow: "Local to your phone",
     title: "Saved on your device, nowhere else",
-    body: "Anything you save shows up as a grid you can scan at a glance, scores kept next to the poster. Nothing is uploaded and nothing asks you to sign in.",
+    body: "Upcoming releases, top airing and completed series sit in scannable rows with scores on the poster. Anything you save stays on the phone — nothing is uploaded, nothing asks you to sign in.",
     rows: [
-      ["View", "Poster grid with scores"],
+      ["Rows", "Upcoming, top airing, completed"],
       ["Editing", "Add or remove from any details page"],
       ["Storage", "Local only, no account"],
     ],
     image: Library,
-    alt: "Daichi list of saved anime titles with star ratings",
+    alt: "Daichi browse screen with upcoming releases, top airing and completed series rows",
+  },
+  {
+    id: "search",
+    label: "Discover",
+    eyebrow: "Search across 10,000+ titles",
+    title: "Type it, find it",
+    body: "The discover tab is a single search field over more than ten thousand titles, with subbed and dubbed rows underneath for when you do not have anything in mind.",
+    rows: [
+      ["Search", "Free text across the catalogue"],
+      ["Rows", "Subbed and dubbed, marked per title"],
+      ["Scores", "Shown on every poster"],
+    ],
+    image: Discover,
+    alt: "Daichi discover screen with a search field and subbed and dubbed anime rows",
   },
 ] as const;
 
