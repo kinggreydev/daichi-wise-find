@@ -4,17 +4,18 @@ import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
 import HomeImg from "@/assets/home.webp.asset.json";
 import DetailsImg from "@/assets/anime-details.webp.asset.json";
-import BrowseImg from "@/assets/browse.webp.asset.json";
-import EpisodesImg from "@/assets/episode-sheet.webp.asset.json";
-import DiscoverImg from "@/assets/discover.webp.asset.json";
+import LibraryImg from "@/assets/library.png.asset.json";
+import PlayerImg from "@/assets/player-overlay.png.asset.json";
+import SearchImg from "@/assets/search-results.webp.asset.json";
 import CreditsImg from "@/assets/details-scrolled-1.png.asset.json";
 
 const Home = HomeImg.url;
 const Details = DetailsImg.url;
-const Library = BrowseImg.url;
-const Player = EpisodesImg.url;
-const Discover = DiscoverImg.url;
+const Library = LibraryImg.url;
+const Player = PlayerImg.url;
+const Discover = SearchImg.url;
 const Credits = CreditsImg.url;
+
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
@@ -59,15 +60,16 @@ const sections = [
     label: "Watch",
     eyebrow: "Sub or dub, your call",
     title: "Press play, keep watching",
-    body: "Pick a language, pick an episode, and the next one is already queued. The episode list is searchable and sortable for long-running shows.",
+    body: "A full player with scrubbing, skip controls, lock, picture-in-picture and fullscreen — with the episode list and chat sitting right below it so you never leave the screen.",
     rows: [
-      ["Sources", "Subbed and dubbed"],
-      ["Queue", "Auto-advance across a season"],
-      ["Episodes", "Search and sort"],
+      ["Controls", "Scrub, skip, lock, PiP, fullscreen"],
+      ["Sources", "Auto quality, language, server"],
+      ["Episodes", "Now playing marked in the list"],
     ],
     image: Player,
-    alt: "Daichi watch screen with watch subbed and dub buttons over a hero image",
+    alt: "Daichi player with playback controls, progress bar and the episode list below",
   },
+
   {
     id: "details",
     label: "Details",
@@ -98,32 +100,33 @@ const sections = [
   },
   {
     id: "library",
-    label: "Browse",
+    label: "My List",
     eyebrow: "Local to your phone",
     title: "Saved on your device, nowhere else",
-    body: "Upcoming releases, top airing and completed series sit in scannable rows with scores on the poster. Anything you save stays on the phone — nothing is uploaded, nothing asks you to sign in.",
+    body: "My List is a plain grid of what you saved, with the score on every poster. It lives on the phone — nothing is uploaded, nothing asks you to sign in.",
     rows: [
-      ["Rows", "Upcoming, top airing, completed"],
+      ["Grid", "Posters with scores, saved count on top"],
       ["Editing", "Add or remove from any details page"],
       ["Storage", "Local only, no account"],
     ],
     image: Library,
-    alt: "Daichi browse screen with upcoming releases, top airing and completed series rows",
+    alt: "Daichi My Library screen showing eight saved anime posters with scores",
   },
   {
     id: "search",
-    label: "Discover",
+    label: "Search",
     eyebrow: "Search across 10,000+ titles",
     title: "Type it, find it",
-    body: "The discover tab is a single search field over more than ten thousand titles, with subbed and dubbed rows underneath for when you do not have anything in mind.",
+    body: "One search field over more than ten thousand titles. Results land as a poster grid with scores, so a franchise with thirty entries is still readable at a glance.",
     rows: [
       ["Search", "Free text across the catalogue"],
-      ["Rows", "Subbed and dubbed, marked per title"],
-      ["Scores", "Shown on every poster"],
+      ["Results", "Poster grid, scores on each card"],
+      ["Clear", "One tap back to browsing"],
     ],
     image: Discover,
-    alt: "Daichi discover screen with a search field and subbed and dubbed anime rows",
+    alt: "Daichi search results for Detective Conan shown as a poster grid with scores",
   },
+
 ] as const;
 
 function LearnMore() {
