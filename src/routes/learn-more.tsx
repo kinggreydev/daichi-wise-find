@@ -60,15 +60,16 @@ const sections = [
     label: "Watch",
     eyebrow: "Sub or dub, your call",
     title: "Press play, keep watching",
-    body: "Pick a language, pick an episode, and the next one is already queued. The episode list is searchable and sortable for long-running shows.",
+    body: "A full player with scrubbing, skip controls, lock, picture-in-picture and fullscreen — with the episode list and chat sitting right below it so you never leave the screen.",
     rows: [
-      ["Sources", "Subbed and dubbed"],
-      ["Queue", "Auto-advance across a season"],
-      ["Episodes", "Search and sort"],
+      ["Controls", "Scrub, skip, lock, PiP, fullscreen"],
+      ["Sources", "Auto quality, language, server"],
+      ["Episodes", "Now playing marked in the list"],
     ],
     image: Player,
-    alt: "Daichi watch screen with watch subbed and dub buttons over a hero image",
+    alt: "Daichi player with playback controls, progress bar and the episode list below",
   },
+
   {
     id: "details",
     label: "Details",
