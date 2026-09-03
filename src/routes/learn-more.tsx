@@ -2,20 +2,19 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
-import HomeImg from "@/assets/home.webp.asset.json";
-import DetailsImg from "@/assets/anime-details.webp.asset.json";
-import LibraryImg from "@/assets/library.png.asset.json";
-import PlayerImg from "@/assets/player-overlay.png.asset.json";
-import SearchImg from "@/assets/search-results.webp.asset.json";
-import CreditsImg from "@/assets/details-scrolled-1.png.asset.json";
+import HomeImg from "@/assets/home_framed.png";
+import DetailsImg from "@/assets/anime-details_framed.png";
+import LibraryImg from "@/assets/library_framed.png";
+import PlayerImg from "@/assets/player-overlay_framed.png";
+import SearchImg from "@/assets/search-results_framed.png";
+import CreditsImg from "@/assets/details-scrolled-1_framed.png";
 
-const Home = HomeImg.url;
-const Details = DetailsImg.url;
-const Library = LibraryImg.url;
-const Player = PlayerImg.url;
-const Discover = SearchImg.url;
-const Credits = CreditsImg.url;
-
+const Home = HomeImg;
+const Details = DetailsImg;
+const Library = LibraryImg;
+const Player = PlayerImg;
+const Discover = SearchImg;
+const Credits = CreditsImg;
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
@@ -126,7 +125,6 @@ const sections = [
     image: Discover,
     alt: "Daichi search results for Detective Conan shown as a poster grid with scores",
   },
-
 ] as const;
 
 function LearnMore() {

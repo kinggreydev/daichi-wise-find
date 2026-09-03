@@ -1,45 +1,44 @@
 import { Link } from "@tanstack/react-router";
 import { ScreenFrame } from "./ScreenFrame";
-import Home from "@/assets/home.webp.asset.json";
-import Details from "@/assets/anime-details.webp.asset.json";
-import Player from "@/assets/player-overlay.png.asset.json";
-import Library from "@/assets/library.png.asset.json";
-import Trends from "@/assets/view-all.webp.asset.json";
-import Search from "@/assets/search-results.webp.asset.json";
+import Home from "@/assets/home_framed.png";
+import Details from "@/assets/anime-details_framed.png";
+import Player from "@/assets/player-overlay_framed.png";
+import Library from "@/assets/library_framed.png";
+import Trends from "@/assets/view-all_framed.png";
+import Search from "@/assets/search-results_framed.png";
 
 const strip = [
   {
-    src: Home.url,
+    src: Home,
     label: "Home",
     alt: "Daichi home screen featuring Bleach with hot trends and latest episodes",
   },
   {
-    src: Trends.url,
+    src: Trends,
     label: "Trends",
     alt: "Daichi hot trends screen with a grid of ranked anime posters and scores",
   },
   {
-    src: Details.url,
+    src: Details,
     label: "Details",
     alt: "Daichi details screen for Demon Slayer with score, duration and watch buttons",
   },
   {
-    src: Player.url,
+    src: Player,
     label: "Player",
     alt: "Daichi player with playback controls, progress bar and the episode list below",
   },
   {
-    src: Library.url,
+    src: Library,
     label: "My List",
     alt: "Daichi My Library screen showing saved anime posters with scores",
   },
   {
-    src: Search.url,
+    src: Search,
     label: "Search",
     alt: "Daichi search results for Detective Conan as a poster grid with scores",
   },
 ];
-
 
 export function Hero() {
   return (
