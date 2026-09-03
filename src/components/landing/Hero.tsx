@@ -1,30 +1,36 @@
 import { Link } from "@tanstack/react-router";
 import { ScreenFrame } from "./ScreenFrame";
-import Home from "@/assets/home.png";
-import Details from "@/assets/anime-details.png";
-import Library from "@/assets/library-with-anime.png";
-import Player from "@/assets/player-playing.png";
+import Home from "@/assets/home.webp.asset.json";
+import Details from "@/assets/anime-details.webp.asset.json";
+import Discover from "@/assets/discover.webp.asset.json";
+import Continue from "@/assets/continue-watching.webp.asset.json";
+import Episodes from "@/assets/episode-sheet.webp.asset.json";
 
 const strip = [
   {
-    src: Home,
+    src: Home.url,
     label: "Home",
-    alt: "Daichi home screen with a featured anime, hot trends and latest episodes",
+    alt: "Daichi home screen featuring Bleach with hot trends and latest episodes",
   },
   {
-    src: Player,
-    label: "Watch",
-    alt: "Daichi watch screen with subbed and dubbed buttons over a hero image",
+    src: Continue.url,
+    label: "Continue",
+    alt: "Daichi home screen showing a continue watching row with episode progress",
   },
   {
-    src: Details,
+    src: Details.url,
     label: "Details",
-    alt: "Daichi details screen with synopsis, studio and voice actors",
+    alt: "Daichi details screen for Demon Slayer with score, duration and watch buttons",
   },
   {
-    src: Library,
-    label: "My list",
-    alt: "Daichi list of saved anime titles with scores",
+    src: Episodes.url,
+    label: "Episodes",
+    alt: "Daichi subbed episode list in a bottom sheet with search and sort",
+  },
+  {
+    src: Discover.url,
+    label: "Discover",
+    alt: "Daichi discover screen with search and subbed and dubbed anime rows",
   },
 ];
 
