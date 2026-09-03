@@ -111,7 +111,7 @@ const sections = [
     alt: "Daichi browse screen with upcoming releases, top airing and completed series rows",
   },
   {
-    id: "discover",
+    id: "search",
     label: "Discover",
     eyebrow: "Search across 10,000+ titles",
     title: "Type it, find it",
