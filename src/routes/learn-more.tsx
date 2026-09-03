@@ -4,17 +4,18 @@ import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
 import HomeImg from "@/assets/home.webp.asset.json";
 import DetailsImg from "@/assets/anime-details.webp.asset.json";
-import BrowseImg from "@/assets/browse.webp.asset.json";
-import EpisodesImg from "@/assets/episode-sheet.webp.asset.json";
-import DiscoverImg from "@/assets/discover.webp.asset.json";
+import LibraryImg from "@/assets/library.png.asset.json";
+import PlayerImg from "@/assets/player-overlay.png.asset.json";
+import SearchImg from "@/assets/search-results.webp.asset.json";
 import CreditsImg from "@/assets/details-scrolled-1.png.asset.json";
 
 const Home = HomeImg.url;
 const Details = DetailsImg.url;
-const Library = BrowseImg.url;
-const Player = EpisodesImg.url;
-const Discover = DiscoverImg.url;
+const Library = LibraryImg.url;
+const Player = PlayerImg.url;
+const Discover = SearchImg.url;
 const Credits = CreditsImg.url;
+
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
