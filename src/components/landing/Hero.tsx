@@ -2,9 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { ScreenFrame } from "./ScreenFrame";
 import Home from "@/assets/home.webp.asset.json";
 import Details from "@/assets/anime-details.webp.asset.json";
-import Discover from "@/assets/discover.webp.asset.json";
-import Continue from "@/assets/continue-watching.webp.asset.json";
-import Episodes from "@/assets/episode-sheet.webp.asset.json";
+import Player from "@/assets/player-overlay.png.asset.json";
+import Library from "@/assets/library.png.asset.json";
+import Trends from "@/assets/view-all.webp.asset.json";
+import Search from "@/assets/search-results.webp.asset.json";
 
 const strip = [
   {
@@ -13,9 +14,9 @@ const strip = [
     alt: "Daichi home screen featuring Bleach with hot trends and latest episodes",
   },
   {
-    src: Continue.url,
-    label: "Continue",
-    alt: "Daichi home screen showing a continue watching row with episode progress",
+    src: Trends.url,
+    label: "Trends",
+    alt: "Daichi hot trends screen with a grid of ranked anime posters and scores",
   },
   {
     src: Details.url,
@@ -23,16 +24,22 @@ const strip = [
     alt: "Daichi details screen for Demon Slayer with score, duration and watch buttons",
   },
   {
-    src: Episodes.url,
-    label: "Episodes",
-    alt: "Daichi subbed episode list in a bottom sheet with search and sort",
+    src: Player.url,
+    label: "Player",
+    alt: "Daichi player with playback controls, progress bar and the episode list below",
   },
   {
-    src: Discover.url,
-    label: "Discover",
-    alt: "Daichi discover screen with search and subbed and dubbed anime rows",
+    src: Library.url,
+    label: "My List",
+    alt: "Daichi My Library screen showing saved anime posters with scores",
+  },
+  {
+    src: Search.url,
+    label: "Search",
+    alt: "Daichi search results for Detective Conan as a poster grid with scores",
   },
 ];
+
 
 export function Hero() {
   return (
