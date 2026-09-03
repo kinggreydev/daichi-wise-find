@@ -2,10 +2,19 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SiteNav } from "@/components/landing/SiteNav";
 import { ScreenFrame } from "@/components/landing/ScreenFrame";
-import Home from "@/assets/home.png";
-import Details from "@/assets/anime-details.png";
-import Library from "@/assets/library-with-anime.png";
-import Player from "@/assets/player-playing.png";
+import HomeImg from "@/assets/home.webp.asset.json";
+import DetailsImg from "@/assets/anime-details.webp.asset.json";
+import BrowseImg from "@/assets/browse.webp.asset.json";
+import EpisodesImg from "@/assets/episode-sheet.webp.asset.json";
+import DiscoverImg from "@/assets/discover.webp.asset.json";
+import CreditsImg from "@/assets/details-scrolled-1.png.asset.json";
+
+const Home = HomeImg.url;
+const Details = DetailsImg.url;
+const Library = BrowseImg.url;
+const Player = EpisodesImg.url;
+const Discover = DiscoverImg.url;
+const Credits = CreditsImg.url;
 
 export const Route = createFileRoute("/learn-more")({
   head: () => ({
