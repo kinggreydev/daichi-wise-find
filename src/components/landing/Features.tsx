@@ -26,7 +26,7 @@ const features = [
 ] as const;
 
 const manifest = [
-  ["Version", "1.5.0 unstable"],
+  ["Version", "1.5.0 — latest release"],
   ["Platform", "Android 8.0+"],
   ["Built with", "Expo · React Native"],
   ["License", "Apache-2.0"],

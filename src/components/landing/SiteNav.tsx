@@ -28,7 +28,7 @@ export function SiteNav({ variant = "landing" }: { variant?: "landing" | "docs" 
           </span>
         </Link>
 
-        <span className="label-mono hidden text-mute sm:inline">Android · v1.0.0</span>
+        <span className="label-mono hidden text-mute sm:inline">Android · v1.5.0</span>
 
         <div className="ml-auto flex items-center gap-4 sm:gap-6">
           <Link
