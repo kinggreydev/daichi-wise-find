@@ -100,32 +100,33 @@ const sections = [
   },
   {
     id: "library",
-    label: "Browse",
+    label: "My List",
     eyebrow: "Local to your phone",
     title: "Saved on your device, nowhere else",
-    body: "Upcoming releases, top airing and completed series sit in scannable rows with scores on the poster. Anything you save stays on the phone — nothing is uploaded, nothing asks you to sign in.",
+    body: "My List is a plain grid of what you saved, with the score on every poster. It lives on the phone — nothing is uploaded, nothing asks you to sign in.",
     rows: [
-      ["Rows", "Upcoming, top airing, completed"],
+      ["Grid", "Posters with scores, saved count on top"],
       ["Editing", "Add or remove from any details page"],
       ["Storage", "Local only, no account"],
     ],
     image: Library,
-    alt: "Daichi browse screen with upcoming releases, top airing and completed series rows",
+    alt: "Daichi My Library screen showing eight saved anime posters with scores",
   },
   {
     id: "search",
-    label: "Discover",
+    label: "Search",
     eyebrow: "Search across 10,000+ titles",
     title: "Type it, find it",
-    body: "The discover tab is a single search field over more than ten thousand titles, with subbed and dubbed rows underneath for when you do not have anything in mind.",
+    body: "One search field over more than ten thousand titles. Results land as a poster grid with scores, so a franchise with thirty entries is still readable at a glance.",
     rows: [
       ["Search", "Free text across the catalogue"],
-      ["Rows", "Subbed and dubbed, marked per title"],
-      ["Scores", "Shown on every poster"],
+      ["Results", "Poster grid, scores on each card"],
+      ["Clear", "One tap back to browsing"],
     ],
     image: Discover,
-    alt: "Daichi discover screen with a search field and subbed and dubbed anime rows",
+    alt: "Daichi search results for Detective Conan shown as a poster grid with scores",
   },
+
 ] as const;
 
 function LearnMore() {
